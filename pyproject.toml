@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-sql-query-plan-advisor"
+version = "0.1.0"
+description = "Query execution plan analyzer catching full table scans and recommending composite index definitions for agent-written SQL"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Ejaj Mahmud", email = "dev@ejajmahmud.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.scripts]
+agent-sql-query-plan-advisor = "agent_sql_query_plan_advisor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent_sql_query_plan_advisor*"]
